@@ -1,79 +1,75 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Vacogas</title>
-<!-- Stylesheets -->
-<link href="/homeassets/css/bootstrap.css" rel="stylesheet">
-<link href="/homeassets/css/style.css" rel="stylesheet">
-<link href="/homeassets/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
-<link href="/homeassets/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
-<link href="/homeassets/plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
-<link href="/homeassets/css/responsive.css" rel="stylesheet">
-<!--<link href="css/color.css" rel="stylesheet">-->
+<html lang="zxx">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Africa Factory Mart - Africa's first and best industrial market</title>
+    <meta name="description" content="Africa Factory Mart was founded on the principles of integrity in solving process measurement and control problems with a degreed engineer and trained professionals.">
+    <meta name="keywords" content="afm,africa factory mart, industrial market, industrial, oil and gas, company, manufacturing, mechanical, power and energy, engineering, automation">
+    <meta name="author" content="afm"> 
+	
+	<!-- ==============================================
+	Favicons
+	=============================================== -->
+	<link rel="shortcut icon" href="/homeassets/images/afmfavicon.jpg">
+	<link rel="apple-touch-icon" href="/homeassets/images/afmfavicon.jpg">
+	<link rel="apple-touch-icon" sizes="72x72" href="/homeassets/images/afmfavicon.jpg">
+	<link rel="apple-touch-icon" sizes="114x114" href="/homeassets/images/afmfavicon.jpg">
+	
+	<!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" href="/homeassets/css/vendor/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/homeassets/css/vendor/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/homeassets/css/vendor/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="/homeassets/css/vendor/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="/homeassets/css/vendor/magnific-popup.css">
+	
+	<!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" href="/homeassets/css/style.css" />
+	
+    <script type="text/javascript" src="/homeassets/js/vendor/modernizr.min.js"></script>
 
-<link rel="shortcut icon" href="/homeassets/images/vacogasfavicon.png" type="image/x-icon">
-<link rel="icon" href="/homeassets/images/vacogasfavicon.png" type="image/x-icon">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-
-<style>
-.team_image{
-	width:200px!important;
-	height:220px!important;
-}
-</style>
 </head>
 
 <body>
 
-<div class="page-wrapper">
- 	
-    
-    <!-- Main Header-->
+	<!-- Load page -->
+	<div class="animationload">
+		<div class="loader"></div>
+	</div>
+	
+	 <!-- Main Header-->
 	@include('home.layout.header')
     <!--End Main Header -->
     
 	@yield('content')
 
 	@include('home.layout.footer')
-    
-</div>
-<!--End pagewrapper-->
+	
+	<!-- JS VENDOR -->
+	<script type="text/javascript" src="/homeassets/js/vendor/jquery.min.js"></script>
+	<script type="text/javascript" src="/homeassets/js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/homeassets/js/vendor/jquery.superslides.js"></script>
+	<script type="text/javascript" src="/homeassets/js/vendor/owl.carousel.js"></script>
+	<script type="text/javascript" src="/homeassets/js/vendor/bootstrap-hover-dropdown.min.js"></script>
+	<script type="text/javascript" src="/homeassets/js/vendor/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="/homeassets/js/vendor/easings.js"></script>
+	<script type="text/javascript" src="/homeassets/js/vendor/isotope.pkgd.min.js"></script>
 
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+	<!-- sendmail -->
+	<script type="text/javascript" src="/homeassets/js/vendor/validator.min.js"></script>
+	<script type="text/javascript" src="/homeassets/js/vendor/form-scripts.js"></script>
+	
+	<script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&#038;ver=4.1.5'></script>
 
-<script src="/homeassets/js/jquery.js"></script> 
-<!--Revolution Slider-->
-<script src="/homeassets/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="/homeassets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="/homeassets/js/main-slider-script.js"></script>
+	<script type="text/javascript" src="/homeassets/js/script.js"></script>
 
-<script src="/homeassets/js/bootstrap.min.js"></script>
-<script src="/homeassets/js/jquery.fancybox.js"></script>
-<script src="/homeassets/js/owl.js"></script>
-<script src="/homeassets/js/jquery-ui.js"></script>
-<script src="/homeassets/js/wow.js"></script>
-<script src="/homeassets/js/knob.js"></script>
-<script src="/homeassets/js/appear.js"></script>
-<script src="/homeassets/js/script.js"></script>
-
-<!--Google Map APi Key-->
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyBKS14AnP3HCIVlUpPKtGp7CbYuMtcXE2o"></script>
-<script src="/homeassets/js/map-script.js"></script>
-<!--End Google Map APi-->
+		
 </body>
 </html>

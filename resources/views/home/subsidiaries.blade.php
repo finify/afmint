@@ -4,7 +4,7 @@
 
 
 <!-- BANNER -->
-<div class="section banner-page about">
+	<div class="section banner-page about">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12">

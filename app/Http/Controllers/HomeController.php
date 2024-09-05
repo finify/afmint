@@ -19,4 +19,15 @@ class HomeController extends Controller
         return view('home.contact');
     }
 
+    public function quote(){
+        return view('home.quote');
+    }
+
+    public function services(){
+        return view('home.services');
+    }
+    public function projects(){
+        return view('home.projects');
+    }
+
 }

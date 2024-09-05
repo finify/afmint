@@ -1,123 +1,104 @@
 @extends('home.layout.layout')
 
 @section('content')
-    
-	<!--Location Section-->
-	<section class="location-section" style="background-image:url(/homeassets/images/background/pattern-1.png)">
-    	<div class="auto-container">
-        	<ul class="page-breadcrumb">
-            	<li><a href="/">Home</a></li>
-                <li>Contact Us</li>
-            </ul>
-        	<div class="sec-title centered light">
-            	<h2>Contact Us</h2>
-                <div class="separator"></div>
-            </div>
-            
-            <!--Map Outer-->
-            <!-- <div class="map-outer">
+<!-- BANNER -->
+	<div class="section banner-page about">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					<div class="title-page">Contact Us</div>
+					{{-- <ol class="breadcrumb">
+						<li><a href="index.html">Contact</a></li>
+						<li class="active">Get A Quote</li>
+					</ol> --}}
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- Contact -->
+<div class="section contact overlap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-md-push-8">
                 
-                <div class="map-canvas"
-                    data-zoom="12"
-                    data-lat="-37.817085"
-                    data-lng="144.955631"
-                    data-type="roadmap"
-                    data-hue="#ffc400"
-                    data-title="Vacogas"
-                    data-icon-path="/homeassets/images/icons/map-marker.png"
-                    data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@vacogas.com</a>">
-                </div>
-            </div> -->
-            
-        </div>
-    </section>
-    <!--End Page Title-->
-    
-    <section class="contact-section">
-    	<div class="auto-container">
-        	
-            <!--Title Box-->
-            <div class="sec-title">
-            	<div class="clearfix">
-                	<div class="pull-left">
-                    	<h2>Quick Contact</h2>
-                        <div class="separator"></div>
+                <div class="widget contact-info-sidebar">
+                    <div class="widget-title">
+                        Contact Info
                     </div>
-                    <div class="text">You have questions? Dont hesitate to contact us</div>
-                </div>
+                    <ul class="list-info">
+                        <li>
+                            <div class="info-icon">
+                                <span class="fa fa-map-marker"></span>
+                            </div>
+                            <div class="info-text">99 S.t Jomblo Park Pekanbaru 28292. Indonesia</div> </li>
+                        <li>
+                            <div class="info-icon">
+                                <span class="fa fa-phone"></span>
+                            </div>
+                            <div class="info-text">(0761) 654-123987</div>
+                        </li>
+                        <li>
+                            <div class="info-icon">
+                                <span class="fa fa-envelope"></span>
+                            </div>
+                            <div class="info-text">info@yoursite.com</div>
+                        </li>
+                        <li>
+                            <div class="info-icon">
+                                <span class="fa fa-clock-o"></span>
+                            </div>
+                            <div class="info-text">Mon - Sat 09:00 - 17:00</div>
+                        </li>
+                    </ul>
+                </div> 
+
             </div>
+            <div class="col-sm-8 col-md-8 col-md-pull-4">
+                <div class="content">
+                   
+                    <div class="margin-bottom-30"></div>
+                    <h3 class="section-heading-2">
+                        Reach out to us:
+                    </h3>
+                    <form action="#" class="form-contact" id="contactForm" data-toggle="validator" novalidate="true">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="p_name" placeholder="Full Name..." required="">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="mech">Mechanical Engineering</option>
+                                <option value="oil">Oil and Lubricants</option>
+                                <option value="chem">Chemical Research</option>
+                                <option value="agri">Agricultural Processing</option>
+                                <option value="power">Power and Energy</option>
+                                <option value="mat">Material Engineering</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="p_email" placeholder="Enter Address..." required="">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="p_subject" placeholder="Subject...">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                                <textarea id="p_message" class="form-control" rows="6" placeholder="Write message"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <div id="success"></div>
+                            <button type="submit" class="btn btn-secondary disabled" style="pointer-events: all; cursor: pointer;">ASK A QUOTE</button>
+                        </div>
+                    </form>
+                    <div class="margin-bottom-50"></div>
+                    <p><em>Note: Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</em></p>
+                    </div>
+            </div>
+
+        </div>
         
-        	<div class="inner-container">
-            	<div class="clearfix">
-                	
-                    <!--Info Column-->
-                    <div class="info-column col-md-4 col-sm-12 col-xs-12">
-                    	<div class="inner-column">
-                        	<div class="upper-box">
-                            	<ul class="list-style-three">
-                                	<li><span class="icon flaticon-map-marker"></span><strong>Lagos Office: </strong>Plot 3B Elegba Festival Road - Oniru Victoria Island Lagos</li>
-                                	<li><span class="icon flaticon-map-marker"></span><strong>Abuja Office: </strong>Aldenco estate  house  43 main  Avenue. Galadimawa Abuja</li>
-                                	<li><span class="icon flaticon-technology-2"></span><strong>Call Us: </strong>08033167341 , 08033102244</li>
-                                    <li><span class="icon flaticon-envelope-1"></span><strong>Mail Us: </strong>info@vacogas.com</li>
-                                </ul>
-                            </div>
-                            <!-- <div class="lower-box">
-                            	<div class="lower-inner">
-                                	<div class="image">
-                                    	<img src="/homeassets/images/resource/author-7.jpg" alt="" />
-                                    </div>
-                                    <h3>Jenifer Hearly</h3>
-                                    <div class="designation">Manager</div>
-                                    <div class="emailed">Jenifer@Metroindustry.com</div>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
-                    
-                    <!--Form Column-->
-                    <div class="form-column col-md-8 col-sm-12 col-xs-12">
-                    	<div class="inner-column">
-                        	
-                            <!-- Contact Form -->
-                            <div class="contact-form">
-                                <!--Default Form-->
-                                <!-- <form method="post" action="/contact" id="contact-form"> -->
-                                    <div class="row clearfix">
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <input type="text" name="username" placeholder="Name" required>
-                                        </div>
-                                        
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <input type="email" name="email" placeholder="E-Mail" required>
-                                        </div>
-                                        
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <input type="text" name="phone" placeholder="Phone" required>
-                                        </div>
-                                        
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <input type="text" name="subject" placeholder="Company" required>
-                                        </div>
-                                        
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                                            <textarea name="message" placeholder="Massage"></textarea>
-                                        </div>
-                                        
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                                            <button class="theme-btn submit-btn" type="submit" name="submit-form">Submit Now <span class="icon flaticon-right-arrow-1"></span></button>
-                                        </div>
-                                        
-                                    </div>
-                                <!-- </form> -->
-                                    
-                            </div>
-                            <!--End Contact Form -->
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</div>	
 @endsection
