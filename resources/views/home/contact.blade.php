@@ -21,37 +21,6 @@
         <div class="row">
             <div class="col-sm-4 col-md-4 col-md-push-8">
                 
-                <div class="widget contact-info-sidebar">
-                    <div class="widget-title">
-                        Contact Info
-                    </div>
-                    <ul class="list-info">
-                        <li>
-                            <div class="info-icon">
-                                <span class="fa fa-map-marker"></span>
-                            </div>
-                            <div class="info-text">99 S.t Jomblo Park Pekanbaru 28292. Indonesia</div> </li>
-                        <li>
-                            <div class="info-icon">
-                                <span class="fa fa-phone"></span>
-                            </div>
-                            <div class="info-text">(0761) 654-123987</div>
-                        </li>
-                        <li>
-                            <div class="info-icon">
-                                <span class="fa fa-envelope"></span>
-                            </div>
-                            <div class="info-text">info@yoursite.com</div>
-                        </li>
-                        <li>
-                            <div class="info-icon">
-                                <span class="fa fa-clock-o"></span>
-                            </div>
-                            <div class="info-text">Mon - Sat 09:00 - 17:00</div>
-                        </li>
-                    </ul>
-                </div> 
-
             </div>
             <div class="col-sm-8 col-md-8 col-md-pull-4">
                 <div class="content">
