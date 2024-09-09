@@ -6,7 +6,7 @@
 				<div class="col-sm-5 col-md-6">
 					<div class="topbar-left">
 						<div class="welcome-text">
-						We help the world growing since 1983
+							
 						</div>
 					</div>
 				</div>
@@ -22,13 +22,10 @@
 							<a href="#"><i class="fa fa-facebook"></i></a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-						</li>
-						<li>
 							<a href="#"><i class="fa fa-instagram"></i></a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-pinterest"></i></a>
+							<a href="https://www.linkedin.com/company/africa-factory-mart"><i class="fa fa-linkedin"></i></a>
 						</li>
 						</ul>
 					</div>

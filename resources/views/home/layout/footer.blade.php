@@ -132,7 +132,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12">
-                    <p class="ftex">&copy; 2024 Africa Factory Mart - Designed by Finify technologies</p> 
+                    <p class="ftex">&copy; 2024 Africa Factory Mart - All rights reserved</p> 
                 </div>
             </div>
         </div>

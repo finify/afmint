@@ -3199,13 +3199,13 @@ dl.hiw {
  */
 @media (max-width: 1024px) {
   .slides-navigation a.prev {
-    left: -20px; }
+    left: 0px; }
 
   .slides-navigation a.next {
-    right: -20px; }
+    right: 0px; }
 
   .testimony .owl-nav .owl-prev {
-    left: -20px; }
+    left: 0px; }
 
   .testimony .owl-nav .owl-next {
     right: -20px; } }
@@ -3248,6 +3248,7 @@ dl.hiw {
     top: 0; }
 
   .wrap-caption {
+    margin-top:100px;
     width: 100%; }
 
   .box-team .box-image, .box-team .body-content {

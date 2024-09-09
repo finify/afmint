@@ -171,6 +171,25 @@
                     </div>
                 </div>
             </div>
+
+             <div class="col-sm-6 col-md-6">
+                <div class="box-team">
+                    <div class="box-image">
+                        <div class="sosmed">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                        <img src="/homeassets/images/600x600.jpg" alt="">
+                    </div>
+                    <div class="body-content">
+                        <div class="people">Izuegbu Ifeanyi</div>
+                        <div class="position">IT Manager</div>
+                        {{-- <div class="excert"></div> --}}
+                        <div class="phone">
+                            <span class="fa fa-phone"></span> M. +234 8132953221
+                        </div>
+                    </div>
+                </div>
+            </div>
             
         </div>
     </div>

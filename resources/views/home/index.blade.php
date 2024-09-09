@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="wrap-caption">
                     <h2 class="caption-heading">
-                        Welcome to Africa Factory Mart Automation
+                        Welcome to Africa Factory Mart International
                     </h2>
                     
                     <a href="/about" class="btn btn-primary" title="LEARN MORE">LEARN MORE</a> <a href="/contact" class="btn btn-secondary" title="CONTACT US">CONTACT US</a>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="body-content">
                         <div class="heading">GLOBAL SOURCING</div>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor.
+                       We source globally to deliver the best products and solutions.
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                     <span class="fa fa-paper-plane-o"></span>
                 </div>
             </div>
-            <div class="col-sm-7 col-md-7">
+            <div class="col-sm-7 col-md-7" style="z-index:1;">
                 <p class="lead">Africa Factory Mart was founded on the principles of integrity in solving process measurement and control problems with a degreed engineer and trained professionals. We take pride in listening to our customers and learning about their business, their problems, their needs & desires in order to provide the best solutions.</p> 
             </div>
 
@@ -138,9 +138,9 @@
                     <div class="icon-holder">
                         <span class="fa fa-gears"></span>
                     </div>
-                    <a href="services-detail.html" class="title">ENGINEERING</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
-                    <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
+                    <a href="#" class="title">ENGINEERING SERVICES</a>
+                    <p>We provide innovative and reliable engineering solutions.</p>
+                    <!-- <a href="#" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
             </div>
@@ -154,9 +154,9 @@
                     <div class="icon-holder">
                         <span class="fa fa-leaf"></span>
                     </div>
-                    <a href="services-detail.html" class="title">AGRICULTURAL PROCESSING</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
-                    <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
+                    <a href="#" class="title">RENEWABLE ENERGY</a>
+                    <p>We offer sustainable energy solutions that drive a cleaner and greener future.</p>
+                    <!-- <a href="#" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
             </div>
@@ -170,9 +170,9 @@
                     <div class="icon-holder">
                         <span class="fa fa-fire"></span>
                     </div>
-                    <a href="services-detail.html" class="title">OILS AND GAS</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
-                    <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
+                    <a href="#" class="title">OILS AND GAS</a>
+                    <p>We deliver efficient and reliable solutions across the oil and gas sector.</p>
+                    <!-- <a href="#" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
             </div>
@@ -186,9 +186,9 @@
                     <div class="icon-holder">
                         <span class="fa fa-flash"></span>
                     </div>
-                    <a href="services-detail.html" class="title">POWER AND ENERGY</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
-                    <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
+                    <a href="#" class="title">POWER AND ENERGY</a>
+                    <p>We provide innovative solutions to power industries and drive energy efficiency.</p>
+                    <!-- <a href="#" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
             </div>
@@ -202,9 +202,9 @@
                     <div class="icon-holder">
                         <span class="fa fa-flask"></span>
                     </div>
-                    <a href="services-detail.html" class="title">CHEMICAL PROCESSING</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
-                    <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
+                    <a href="#" class="title">CHEMICAL PROCESSING</a>
+                    <p>We offer advanced solutions for efficient and safe chemical processing operations</p>
+                    <!-- <a href="#" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
             </div>
@@ -218,9 +218,9 @@
                     <div class="icon-holder">
                         <span class="fa fa-cubes"></span>
                     </div>
-                    <a href="services-detail.html" class="title">MATERIAL ENGINEERING</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
-                    <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
+                    <a href="#" class="title">MATERIAL ENGINEERING</a>
+                    <p>We provide specialized solutions to enhance material durability.</p>
+                    <!-- <a href="#" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
             </div>			
@@ -295,7 +295,7 @@
         <div class="row grid-services">
             <div class="col-sm-6 col-md-4 electrical">
                 <div class="box-image-4">
-                    <a href="project-detail.html" title="Industrial Complex">
+                    <a href="/homeassets/images/projects/electrical/electrical1.jpeg" title="Industrial Complex">
                         <div class="media">
                             <img src="/homeassets/images/projects/electrical/electrical1.jpeg" alt="" class="img-responsive">
                         </div>
@@ -310,7 +310,7 @@
             </div>
             <div class="col-sm-6 col-md-4 electrical">
                 <div class="box-image-4">
-                    <a href="project-detail.html" title="Industrial Complex">
+                    <a href="/homeassets/images/projects/electrical/electrical2.jpeg" title="Industrial Complex">
                         <div class="media">
                             <img src="/homeassets/images/projects/electrical/electrical2.jpeg" alt="" class="img-responsive">
                         </div>
@@ -326,7 +326,7 @@
             </div>
             <div class="col-sm-6 col-md-4 electrical">
                 <div class="box-image-4">
-                    <a href="project-detail.html" title="Industrial Complex">
+                    <a href="/homeassets/images/projects/electrical/electrical3.jpeg" title="Industrial Complex">
                         <div class="media">
                             <img src="/homeassets/images/projects/electrical/electrical3.jpeg" alt="" class="img-responsive">
                         </div>
@@ -341,7 +341,7 @@
             </div>
             <div class="col-sm-6 col-md-4 automation">
                 <div class="box-image-4">
-                    <a href="project-detail.html" title="Industrial Complex">
+                    <a href="/homeassets/images/projects/automation/automation1.jpg" title="Industrial Complex">
                         <div class="media">
                             <img src="/homeassets/images/projects/automation/automation1.jpg" alt="" class="img-responsive">
                         </div>
@@ -356,7 +356,7 @@
             </div>
             <div class="col-sm-6 col-md-4 automation">
                 <div class="box-image-4">
-                    <a href="project-detail.html" title="Industrial Complex">
+                    <a href="/homeassets/images/projects/automation/automation2.jpeg" title="Industrial Complex">
                         <div class="media">
                             <img src="/homeassets/images/projects/automation/automation2.jpeg" alt="" class="img-responsive">
                         </div>
@@ -371,7 +371,7 @@
             </div>
             <div class="col-sm-6 col-md-4 automation">
                 <div class="box-image-4">
-                    <a href="project-detail.html" title="Industrial Complex">
+                    <a href="/homeassets/images/projects/automation/automation2.jpeg" title="Industrial Complex">
                         <div class="media">
                             <img src="/homeassets/images/projects/automation/automation2.jpeg" alt="" class="img-responsive">
                         </div>
@@ -384,8 +384,6 @@
                     </a>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
