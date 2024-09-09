@@ -148,7 +148,7 @@
                 <!-- BOX 2 -->
                 <div class="feature-box-8">
                     <div class="media">
-                    <img src="/homeassets/images/service-2.jpg" alt="rud" class="img-responsive">
+                    <img src="/homeassets/images/services2.png" alt="rud" class="img-responsive">
                     </div>
                     <div class="body">
                     <div class="icon-holder">
