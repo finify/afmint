@@ -30,4 +30,8 @@ class HomeController extends Controller
         return view('home.projects');
     }
 
+    public function solar(){
+        return view('home.solar');
+    }
+
 }

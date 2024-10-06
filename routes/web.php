@@ -23,6 +23,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::match(['get','post'],'/quote', 'HomeController@quote')->name('home.quote');
 
 
+    //pages 
+    Route::get('/solar', 'HomeController@solar')->name('home.solar');
+
+
 
     Route::get('/subsidiaries', 'HomeController@subsidiaries')->name('home.subsidiaries');
 

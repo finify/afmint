@@ -154,7 +154,7 @@
                     <div class="icon-holder">
                         <span class="fa fa-leaf"></span>
                     </div>
-                    <a href="#" class="title">RENEWABLE ENERGY</a>
+                    <a href="/solar" class="title">RENEWABLE ENERGY</a>
                     <p>We offer sustainable energy solutions that drive a cleaner and greener future.</p>
                     <!-- <a href="#" class="readmore">READ MORE</a> -->
                     </div>
@@ -517,6 +517,14 @@
                 <div class="box-icon-3">
                     <div class="line-t"></div>
                     <img src="/homeassets/images/brands/abb.png" style="height:80px;" alt="">
+                    <div class="line-b"></div>
+                </div>
+            </div>		
+            <div class="col-sm-6 col-md-2 col-6">
+                <!-- BOX 6 -->
+                <div class="box-icon-3">
+                    <div class="line-t"></div>
+                    <img src="/homeassets/images/Airmax.jpg" style="height:80px;" alt="">
                     <div class="line-b"></div>
                 </div>
             </div>			
