@@ -299,9 +299,9 @@
             @foreach($galleries as $gallery)
             <div class="col-sm-6 col-md-4 {{ $gallery['project_name'] }}">
                 <div class="box-image-4">
-                    <a href="{{ $gallery['image'] }}" title="{{ $gallery['heading'] }}">
+                    <a href="{{ Storage::url($gallery['image']) }}" title="{{ $gallery['heading'] }}">
                         <div class="media">
-                            <img src="{{ $gallery['image'] }}" alt="" class="img-responsive">
+                            <img src="{{ Storage::url($gallery['image']) }}" alt="" class="img-responsive">
                         </div>
                         <div class="body">
                             <div class="content">
@@ -337,7 +337,7 @@
                     @foreach($clients as $client)
                     <div class="item">
                         <div class="testimonial-1">
-                            <div class="media"><img src="{{ $client['image'] }}" alt="" class="img-responsive"></div>
+                            <div class="media"><img src="{{ Storage::url($client['image']) }}" alt="" class="img-responsive"></div>
                             <div class="body">
                             <div class="title">{{ $client['name'] }}</div>
                             <div class="company">{{ $client['subheading'] }}</div>
