@@ -2,13 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
+use App\Models\Gallery;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-   //
+    public function getDetails(){
+
+        $projects = Project::orderBy('id','desc')->get()->toArray();
+        // $galleries = Gallery::orderBy('id','desc')->paginate(20);
+        $galleries = Gallery::select('galleries.*','projects.name as project_name')->leftJoin('projects','projects.id','=','galleries.project_id')->orderBy('id','desc')->paginate(20);
+        // dd(compact('projecttypes'));
+
+        $clients = Client::orderBy('id','desc')->get()->toArray();
+
+        return compact('projects','galleries','clients');
+    }
    public function index(){
-    return view('home.index');
+    $details = $this->getDetails();
+    return view('home.index')->with($details);
     }
 
     public function about(){

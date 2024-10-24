@@ -286,104 +286,33 @@
                 <nav class="categories">
                 <ul class="portfolio_filter dark">
                     <li><a href="" class="active" data-filter="*">All</a></li>
-                    <li><a href="" data-filter=".electrical">Electrical</a></li>
-                    <li><a href="" data-filter=".automation">Automations</a></li>
+                    @foreach($projects as $project)
+                    <li><a href="" data-filter=".{{ $project['name'] }}">{{ $project['name'] }}</a></li>
+                    @endforeach
+                    {{-- <li><a href="" data-filter=".automation">Automations</a></li> --}}
                 </ul>
             </nav>
             </div>
         </div>
         <div class="row grid-services">
-            <div class="col-sm-6 col-md-4 electrical">
+
+            @foreach($galleries as $gallery)
+            <div class="col-sm-6 col-md-4 {{ $gallery['project_name'] }}">
                 <div class="box-image-4">
-                    <a href="/homeassets/images/projects/electrical/electrical1.jpeg" title="Industrial Complex">
+                    <a href="{{ $gallery['image'] }}" title="{{ $gallery['heading'] }}">
                         <div class="media">
-                            <img src="/homeassets/images/projects/electrical/electrical1.jpeg" alt="" class="img-responsive">
+                            <img src="{{ $gallery['image'] }}" alt="" class="img-responsive">
                         </div>
                         <div class="body">
                             <div class="content">
-                                <h4 class="title">INDUSTRIAL COMPLEX</h4>
-                                <span class="category">Commodoenim</span>
+                                <h4 class="title">{{ $gallery['heading'] }}</h4>
+                                <span class="category">{{ $gallery['subheading'] }}</span>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4 electrical">
-                <div class="box-image-4">
-                    <a href="/homeassets/images/projects/electrical/electrical2.jpeg" title="Industrial Complex">
-                        <div class="media">
-                            <img src="/homeassets/images/projects/electrical/electrical2.jpeg" alt="" class="img-responsive">
-                        </div>
-                        <div class="body">
-                            <div class="content">
-                                <h4 class="title">The Gas Company</h4>
-                                <span class="category">Commodoenim</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-            </div>
-            <div class="col-sm-6 col-md-4 electrical">
-                <div class="box-image-4">
-                    <a href="/homeassets/images/projects/electrical/electrical3.jpeg" title="Industrial Complex">
-                        <div class="media">
-                            <img src="/homeassets/images/projects/electrical/electrical3.jpeg" alt="" class="img-responsive">
-                        </div>
-                        <div class="body">
-                            <div class="content">
-                                <h4 class="title">Warehouse Industry</h4>
-                                <span class="category">Commodoenim</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 automation">
-                <div class="box-image-4">
-                    <a href="/homeassets/images/projects/automation/automation1.jpg" title="Industrial Complex">
-                        <div class="media">
-                            <img src="/homeassets/images/projects/automation/automation1.jpg" alt="" class="img-responsive">
-                        </div>
-                        <div class="body">
-                            <div class="content">
-                                <h4 class="title">Gear Manufacturing</h4>
-                                <span class="category">Commodoenim</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 automation">
-                <div class="box-image-4">
-                    <a href="/homeassets/images/projects/automation/automation2.jpeg" title="Industrial Complex">
-                        <div class="media">
-                            <img src="/homeassets/images/projects/automation/automation2.jpeg" alt="" class="img-responsive">
-                        </div>
-                        <div class="body">
-                            <div class="content">
-                                <h4 class="title">Oil Pipeline Industry</h4>
-                                <span class="category">Commodoenim</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 automation">
-                <div class="box-image-4">
-                    <a href="/homeassets/images/projects/automation/automation2.jpeg" title="Industrial Complex">
-                        <div class="media">
-                            <img src="/homeassets/images/projects/automation/automation2.jpeg" alt="" class="img-responsive">
-                        </div>
-                        <div class="body">
-                            <div class="content">
-                                <h4 class="title">Oil Pipeline Industry</h4>
-                                <span class="category">Commodoenim</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -405,16 +334,18 @@
                 </div>
 
                 <div id="owl-testimony">
+                    @foreach($clients as $client)
                     <div class="item">
                         <div class="testimonial-1">
-                            <div class="media"><img src="/homeassets/images/buagorup.webp" alt="" class="img-responsive"></div>
+                            <div class="media"><img src="{{ $client['image'] }}" alt="" class="img-responsive"></div>
                             <div class="body">
-                            <div class="title">Bua Group</div>
-                            <div class="company">Instrumentation & Automation</div>
+                            <div class="title">{{ $client['name'] }}</div>
+                            <div class="company">{{ $client['subheading'] }}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    @endforeach
+                    {{-- <div class="item">
                         <div class="testimonial-1">
                             <div class="media"><img src="/homeassets/images/dangote.webp" alt="" class="img-responsive"></div>
                             <div class="body">
@@ -449,7 +380,7 @@
                             <div class="company">Procurement</div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 
             </div>
