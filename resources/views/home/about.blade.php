@@ -147,7 +147,7 @@
                         <div class="position">Managing Director</div>
                         {{-- <div class="excert"></div> --}}
                         <div class="phone">
-                            <span class="fa fa-phone"></span> M. +234 7039678218
+                            <span class="fa fa-phone"></span> M. + 234 8164480570
                         </div>
                     </div>
                 </div>
