@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('email', 191)->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
-        })->charset('utf8')->collation('utf8_unicode_ci');
+        });
     }
 
     /**
