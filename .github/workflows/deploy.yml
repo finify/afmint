@@ -52,6 +52,16 @@ jobs:
               echo "RewriteRule ^(.*)$ public/$1 [L]" >> .htaccess
             fi
 
+            #set the permission of the storage and bootstrap/cache folders
+            chmod -R 755 ./
+            chmod -R 755 /public
+            chmod -R 775 /storage
+            chmod -R 775 /bootstrap/cache
+            chmod 644 /public/index.php
+            chmod -R 777 storage bootstrap/cache
+            php artisan storage:link
+
+
             #Setting up laravel
             php artisan migrate --force
             php artisan cache:clear
