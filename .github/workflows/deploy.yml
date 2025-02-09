@@ -1,0 +1,60 @@
+name: Deploy Laravel to cPanel (Staging & Production)
+
+on:
+  push:
+    branches:
+      - main # For production
+      - staging # For staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, dom, curl, zip
+        tools: composer, npm
+
+    - name: Install Dependencies
+      run: |
+        composer install --no-dev --optimize-autoloader
+        npm install && npm run build
+
+    - name: Upload via FTP (Staging)
+      if: github.ref == 'refs/heads/staging'
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.CPANEL_HOST }}
+        username: ${{ secrets.CPANEL_USER }}
+        password: ${{ secrets.CPANEL_PASSWORD }}
+        local-dir: ./
+        server-dir: ${{ secrets.STAGING_PATH }}
+
+    - name: Upload via FTP (Production)
+      if: github.ref == 'refs/heads/main'
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.CPANEL_HOST }}
+        username: ${{ secrets.CPANEL_USER }}
+        password: ${{ secrets.CPANEL_PASSWORD }}
+        local-dir: ./
+        server-dir: ${{ secrets.PRODUCTION_PATH }}
+
+    - name: Run Laravel Setup Commands
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
+        cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+        php artisan migrate --force
+        php artisan cache:clear
+        php artisan config:clear
+        php artisan route:clear
+        php artisan view:clear
+        php artisan queue:restart
+        exit
+        EOF
