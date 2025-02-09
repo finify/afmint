@@ -3,7 +3,7 @@ name: Deploy Laravel to cPanel (Staging & Production)
 on:
   push:
     branches:
-      - main # For production
+      - master # For production
       - staging # For staging
 
 jobs:
