@@ -11,79 +11,79 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Initial Setup
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.CPANEL_HOST }}
-        port: 21098  # Specify your custom SSH port
-        username: ${{ secrets.CPANEL_USER }}
-        password: ${{ secrets.CPANEL_PASSWORD }}
-        script: |
-          cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
-          
-          #check if the repository is already cloned
-          if [ ! -d .git ]; then
-            git clone ${{ secrets.REPO_URL }} .
-          fi
+      - name: Initial Setup
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          port: 21098  # Specify your custom SSH port
+          username: ${{ secrets.CPANEL_USER }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          script: |
+            cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+            
+            #check if the repository is already cloned
+            if [ ! -d .git ]; then
+              git clone ${{ secrets.REPO_URL }} .
+            fi
 
-          #checkout the branch pulled if not already on the branch
-          git checkout ${{ github.ref }}
+            #checkout the branch pulled if not already on the branch
+            git checkout ${{ github.ref }}
 
-          # Check if .env file exists, if not, copy .env.deploy to .env
-          if [ ! -f .env ]; then
-            cp .env.deploy .env
-            echo ".env file created from .env.deploy"
-            echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
-            echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
-            echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-          fi
+            # Check if .env file exists, if not, copy .env.deploy to .env
+            if [ ! -f .env ]; then
+              cp .env.deploy .env
+              echo ".env file created from .env.deploy"
+              echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
+              echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+              echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+            fi
 
-          #install composer and dependencies if not already installed else composer update
-          if [ ! -d vendor ]; then
+            #install composer and dependencies if not already installed else composer update
+            if [ ! -d vendor ]; then
+              composer install
+            else
+              composer update
+            fi
+
+            #Setting up laravel
+            php artisan migrate --force
+            php artisan cache:clear
+            php artisan config:clear
+            php artisan route:clear
+            php artisan view:clear
+            php artisan queue:restart
+
+            
+    
+      - name: Pulling New Updates
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          port: 21098  # Specify your custom SSH port
+          username: ${{ secrets.CPANEL_USER }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          script: |
+            cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+            
+            #checkout the branch pulled if not already on the branch
+            git checkout ${{ github.ref }}
+
+            #git pull from the branch
+            git pull origin ${{ github.ref }}
+            
+            #install composer
             composer install
-          else
-            composer update
-          fi
 
-          #Setting up laravel
-          php artisan migrate --force
-          php artisan cache:clear
-          php artisan config:clear
-          php artisan route:clear
-          php artisan view:clear
-          php artisan queue:restart
+            #Setting up laravel
+            php artisan migrate --force
+            php artisan cache:clear
+            php artisan config:clear
+            php artisan route:clear
+            php artisan view:clear
+            php artisan queue:restart
 
-          
-   
-    - name: Pulling New Updates
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.CPANEL_HOST }}
-        port: 21098  # Specify your custom SSH port
-        username: ${{ secrets.CPANEL_USER }}
-        password: ${{ secrets.CPANEL_PASSWORD }}
-        script: |
-          cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
-          
-          #checkout the branch pulled if not already on the branch
-          git checkout ${{ github.ref }}
-
-          #git pull from the branch
-          git pull origin ${{ github.ref }}
-          
-          #install composer
-          composer install
-
-          #Setting up laravel
-          php artisan migrate --force
-          php artisan cache:clear
-          php artisan config:clear
-          php artisan route:clear
-          php artisan view:clear
-          php artisan queue:restart
-
-          exit
-          EOF
+            exit
+            EOF
