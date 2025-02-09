@@ -44,8 +44,12 @@ jobs:
             #install composer and dependencies if not already installed else composer update
             if [ ! -d vendor ]; then
               composer install
-            else
-              composer update
+            fi
+
+            #create a .htaccess file if not already created and add the rewrite rule
+            if [ ! -f .htaccess ]; then
+              echo "RewriteEngine On" >> .htaccess
+              echo "RewriteRule ^(.*)$ public/$1 [L]" >> .htaccess
             fi
 
             #Setting up laravel
