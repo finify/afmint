@@ -24,10 +24,6 @@ jobs:
           script: |
             cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
             
-            #check if the repository is already cloned
-            # if [ ! -d .git ]; then
-            #   git clone ${{ secrets.REPO_URL }} .
-            # fi
 
             #checkout the branch pulled if not already on the branch
             git checkout ${{ github.ref }}
@@ -50,16 +46,17 @@ jobs:
             if [ ! -f .htaccess ]; then
               echo "RewriteEngine On" >> .htaccess
               echo "RewriteRule ^(.*)$ public/$1 [L]" >> .htaccess
+
+              php artisan storage:link
             fi
 
             #set the permission of the storage and bootstrap/cache folders
-            chmod 755 ./
             chmod 755 public
             chmod 775 storage
             chmod 775 bootstrap/cache
             chmod 644 public/index.php
-            php artisan storage:link
-
+            
+            
 
             #Setting up laravel
             php artisan migrate --force
