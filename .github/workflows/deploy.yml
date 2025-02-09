@@ -54,11 +54,10 @@ jobs:
 
             #set the permission of the storage and bootstrap/cache folders
             chmod -R 755 ./
-            chmod -R 755 /public
-            chmod -R 775 /storage
-            chmod -R 775 /bootstrap/cache
-            chmod 644 /public/index.php
-            chmod -R 777 storage bootstrap/cache
+            chmod -R 755 public
+            chmod -R 775 storage
+            chmod -R 775 bootstrap/cache
+            chmod 644 public/index.php
             php artisan storage:link
 
 
