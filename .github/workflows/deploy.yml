@@ -37,7 +37,7 @@ jobs:
         server-dir: ${{ secrets.STAGING_PATH }}
 
     - name: Upload via FTP (Production)
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/master'
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.CPANEL_HOST }}
@@ -47,14 +47,23 @@ jobs:
         server-dir: ${{ secrets.PRODUCTION_PATH }}
 
     - name: Run Laravel Setup Commands
-      run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
-        cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
-        php artisan migrate --force
-        php artisan cache:clear
-        php artisan config:clear
-        php artisan route:clear
-        php artisan view:clear
-        php artisan queue:restart
-        exit
-        EOF
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.CPANEL_HOST }}
+        port: 21098  # Specify your custom SSH port
+        username: ${{ secrets.CPANEL_USER }}
+        password: ${{ secrets.CPANEL_PASSWORD }}
+        script: |
+          cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+          cp .env.deploy .env
+          echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+          php artisan migrate --force
+          php artisan cache:clear
+          php artisan config:clear
+          php artisan route:clear
+          php artisan view:clear
+          php artisan queue:restart
+          exit
+          EOF
