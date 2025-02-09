@@ -23,11 +23,6 @@ jobs:
           password: ${{ secrets.CPANEL_PASSWORD }}
           script: |
             cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
-            
-            #git clone repository if not already cloned
-            if [ ! -d .git ]; then
-              git clone ${{ secrets.REPO_URL }} .
-            fi
 
             #checkout the branch pulled if not already on the branch
             git checkout ${{ github.ref }}
@@ -53,12 +48,6 @@ jobs:
 
               php artisan storage:link
             fi
-
-            #set the permission of the storage and bootstrap/cache folders
-            # chmod 755 public
-            # chmod 775 storage
-            # chmod 775 bootstrap/cache
-            # chmod 644 public/index.php
             
             
 
