@@ -80,6 +80,7 @@
 					
 				</div>
 
+				{{-- fixing the stagging --}}
 				<a href="/" class="navbar-brand" style="width:300px!important">
 					<img src="/homeassets/images/afmlogo.png" alt="" width="250px" />
 				</a>
