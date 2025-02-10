@@ -43,10 +43,10 @@ jobs:
 
             #create a .htaccess file if not already created and add the rewrite rule
             if [ ! -f .htaccess ]; then
-              echo "<IfModule mod_rewrite.c>" >> .htaccess
-              echo "    RewriteEngine On" >> .htaccess
-              echo "    RewriteRule ^(.*)$ public/$1 [L]" >> .htaccess
-              echo "</IfModule>" >> .htaccess
+              echo '<IfModule mod_rewrite.c>' >> .htaccess
+              echo '    RewriteEngine On' >> .htaccess
+              echo '    RewriteRule ^(.*)$ public/$1 [L]' >> .htaccess
+              echo '</IfModule>' >> .htaccess
 
               php artisan storage:link
             fi
