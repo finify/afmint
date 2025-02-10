@@ -43,24 +43,14 @@ jobs:
 
             #create a .htaccess file if not already created and add the rewrite rule
             if [ ! -f .htaccess ]; then
-              echo "RewriteEngine On" >> .htaccess
-              echo "RewriteRule ^(.*)$ public/$1 [L]" >> .htaccess
+              echo "<IfModule mod_rewrite.c>" >> .htaccess
+              echo "    RewriteEngine On" >> .htaccess
+              echo "    RewriteRule ^(.*)$ public/$1 [L]" >> .htaccess
+              echo "</IfModule>" >> .htaccess
 
               php artisan storage:link
             fi
-            
-            
 
-            #Setting up laravel
-            php artisan migrate --force
-            php artisan cache:clear
-            php artisan config:clear
-            php artisan route:clear
-            php artisan view:clear
-            php artisan queue:restart
-
-            
-    
       - name: Pulling New Updates
         uses: appleboy/ssh-action@master
         with:
