@@ -40,7 +40,7 @@
                         <span class="fa fa-gears"></span>
                     </div>
                     <a href="services-detail.html" class="title">ENGINEERING</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
+                    <p>We provide innovative and reliable engineering solutions.</p>
                     <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                     <div class="icon-holder">
                         <span class="fa fa-leaf"></span>
                     </div>
-                    <a href="services-detail.html" class="title">AGRICULTURAL PROCESSING</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
+                    <a href="services-detail.html" class="title">RENEWABLE ENERGY</a>
+                    <p>We offer sustainable energy solutions that drive a cleaner and greener future.</p>
                     <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         <span class="fa fa-fire"></span>
                     </div>
                     <a href="services-detail.html" class="title">OILS AND GAS</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
+                    <p>We deliver efficient and reliable solutions across the oil and gas sector.</p>
                     <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         <span class="fa fa-flash"></span>
                     </div>
                     <a href="services-detail.html" class="title">POWER AND ENERGY</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
+                    <p>We provide innovative solutions to power industries and drive energy efficiency.</p>
                     <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                         <span class="fa fa-flask"></span>
                     </div>
                     <a href="services-detail.html" class="title">CHEMICAL PROCESSING</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
+                    <p>We offer advanced solutions for efficient and safe chemical processing operations</p>
                     <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                         <span class="fa fa-cubes"></span>
                     </div>
                     <a href="services-detail.html" class="title">MATERIAL ENGINEERING</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed</p>
+                    <p>We provide specialized solutions to enhance material durability.</p>
                     <!-- <a href="services-detail.html" class="readmore">READ MORE</a> -->
                     </div>
                 </div>

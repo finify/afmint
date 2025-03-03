@@ -81,6 +81,10 @@
                     </div>
                     <ul class="recent-post">
                         <li>
+                            <span class="date"><i class="fa fa-clock-o"></i> NIGERIA:</span>
+                            <a href="#" title="">1 Child Close, Liverpool, Apapa , Lagos Nigeria</a>
+                        </li>
+                        <li>
                             <span class="date"><i class="fa fa-clock-o"></i> INDIA:</span>
                             <a href="#" title="">273D/17, Safa Nagar, Arabic College Road, Edathala P.O, Aluva, Eranakulam, Kerala. Pin: 683561</a>
                         </li>

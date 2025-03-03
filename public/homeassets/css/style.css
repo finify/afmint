@@ -1103,7 +1103,7 @@ Back To Top Section
 
 /* 2.4. BOX ICON 3 */
 .box-icon-3 {
-  padding: 50px 30px 60px 30px;
+  /* padding: 50px 30px 60px 30px; */
   border: 1px solid #dcdde1;
   text-align: center;
   position: relative;
@@ -1514,7 +1514,7 @@ Back To Top Section
     max-width: 255px;
     display: block;
     position: relative;
-    background-color: #041e42; }
+     }
     .testimonial-1 .media img {
       -webkit-transform: scale(1, 1);
       -ms-transform: scale(1, 1);

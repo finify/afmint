@@ -55,7 +55,7 @@
 					</div>
 					<div class="body-content">
 						<div class="heading">Call Support</div>
-						+919747748839
+						+234 8164480570
 					</div>
 				</div>
 				<!-- INFO 3 -->

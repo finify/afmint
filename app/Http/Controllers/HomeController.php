@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Client;
 use App\Models\Gallery;
 use App\Models\Project;
@@ -18,7 +19,9 @@ class HomeController extends Controller
 
         $clients = Client::orderBy('id','desc')->get()->toArray();
 
-        return compact('projects','galleries','clients');
+        $brands = Brand::orderBy('id','desc')->get()->toArray();
+
+        return compact('projects','galleries','clients','brands');
     }
    public function index(){
     $details = $this->getDetails();

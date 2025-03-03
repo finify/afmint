@@ -117,7 +117,7 @@
                     <div class="play-vid">
                         <a class="popup-youtube" href="https://www.youtube.com/watch?v=aZz0-mZPBI0"><span class="fa fa-play fa-3x playvid"></span></a>
                     </div>
-                    <img src="/homeassets/images/800x600.jpg" alt="" class="img-responsive">
+                    <img src="/homeassets/images/videoimage.jpg" alt="" class="img-responsive">
                 </div>
             </div>
             
@@ -167,6 +167,25 @@
                         {{-- <div class="excert"></div> --}}
                         <div class="phone">
                             <span class="fa fa-phone"></span> M. +234 7039678218
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="box-team">
+                    <div class="box-image">
+                        <div class="sosmed">
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                        <img src="/homeassets/images/600x600.jpg" alt="">
+                    </div>
+                    <div class="body-content">
+                        <div class="people">Boopal Angusamy
+                            </div>
+                        <div class="position">Sr manager E&I</div>
+                        {{-- <div class="excert"></div> --}}
+                        <div class="phone">
+                            <span class="fa fa-phone"></span> M. +234 8082843336
                         </div>
                     </div>
                 </div>

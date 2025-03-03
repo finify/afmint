@@ -402,63 +402,25 @@
         </div>
 
         <div class="row no-gutter">
+        @foreach($brands as $brand)
+            <div class="col-sm-6 col-md-2 col-xs-6">
+                <div class="box-icon-3">
+                    <div class="line-t"></div>
+                    <img src="{{ Storage::url($brand['image']) }}" style="height:80px;" alt="{{ $brand['name'] }}">
+                    <div class="line-b"></div>
+                </div>
+            </div>
+        @endforeach
 
-            <div class="col-sm-6 col-md-2 col-6">
+
+            {{-- <div class="col-sm-6 col-md-2 col-xs-6">
                 <!-- BOX 1 -->
                 <div class="box-icon-3">
                     <div class="line-t"></div>
                     <img src="/homeassets/images/brands/abb.png" style="height:80px;" alt="">
                     <div class="line-b"></div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-md-2 col-6">
-                <!-- BOX 2 -->
-                <div class="box-icon-3">
-                    <div class="line-t"></div>
-                    <img src="/homeassets/images/brands/fluke.avif" style="height:80px;" alt="">
-                    <div class="line-b"></div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-2 col-6">
-                <!-- BOX 3 -->
-                <div class="box-icon-3">
-                    <div class="line-t"></div>
-                    <img src="/homeassets/images/brands/honeywell.avif" style="height:80px;" alt="">
-                    <div class="line-b"></div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-2 col-6">
-                <!-- BOX 4 -->
-                <div class="box-icon-3">
-                    <div class="line-t"></div>
-                    <img src="/homeassets/images/brands/schneider.avif" style="height:80px;" alt="">
-                    <div class="line-b"></div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-2 col-6">
-                <!-- BOX 5 -->
-                <div class="box-icon-3">
-                    <div class="line-t"></div>
-                    <img src="/homeassets/images/brands/siemens.avif" style="height:80px;" alt="">
-                    <div class="line-b"></div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-2 col-6">
-                <!-- BOX 6 -->
-                <div class="box-icon-3">
-                    <div class="line-t"></div>
-                    <img src="/homeassets/images/brands/abb.png" style="height:80px;" alt="">
-                    <div class="line-b"></div>
-                </div>
-            </div>		
-            <div class="col-sm-6 col-md-2 col-6">
-                <!-- BOX 6 -->
-                <div class="box-icon-3">
-                    <div class="line-t"></div>
-                    <img src="/homeassets/images/Airmax.jpg" style="height:80px;" alt="">
-                    <div class="line-b"></div>
-                </div>
-            </div>			
+            </div> --}}
             
         </div>
     </div>
