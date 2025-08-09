@@ -19,7 +19,7 @@
                     <div class="icon"><i class="fa fa-map-marker"></i></div>
                     <div class="body-content">
                         <div class="heading">Our HQ</div>
-                        1 Tony Estate Rumuewhara PortHarcourt, Rivers State
+                        1 Child Close, Liverpool, Apapa , Lagos Nigeria
                     </div>
                 </div>
             </div>
