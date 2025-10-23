@@ -185,7 +185,7 @@
                         <div class="position">Sr manager E&I</div>
                         {{-- <div class="excert"></div> --}}
                         <div class="phone">
-                            <span class="fa fa-phone"></span> M. +234 8082843336
+                            <span class="fa fa-phone"></span> M. +234 8082943336
                         </div>
                     </div>
                 </div>

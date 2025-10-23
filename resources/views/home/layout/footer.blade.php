@@ -9,7 +9,10 @@
                     <div class="icon"><i class="fa fa-phone"></i></div>
                     <div class="body-content">
                         <div class="heading">CALL US NOW</div>
-                        Nigeria : +2348132953221 India: +919747748839 Kenya: +254724397236 Uganda: +256754261813
+                        <a href="tel:+2348164480570">Nigeria: +2348164480570</a><br>
+                        <a href="tel:+919747748839">India: +919747748839</a><br>
+                        <a href="tel:+254724397236">Kenya: +254724397236</a><br>
+                        <a href="tel:+256754261813">Uganda: +256754261813</a>
                     </div>
                 </div>
             </div>
