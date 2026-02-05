@@ -3,80 +3,169 @@ name: Deploy Laravel to cPanel (Staging & Production)
 on:
   push:
     branches:
-      - master # For production
+      - main # For production
       - staging # For staging
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+     
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+ 
+      #setup php with composer ,npm and yarn ,
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, dom, curl, zip
+          tools: composer, npm , yarn
 
-      - name: Initial Setup
+      - name: Ensure Git Repo Exists on Server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.CPANEL_HOST }}
-          port: 21098  # Specify your custom SSH port
+          port: 65002
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASSWORD }}
           script: |
-            cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+            DIR=${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+            BRANCH=$(echo ${{ github.ref }} | sed 's#refs/heads/##')
+            DIRROOT=${{ github.ref == 'refs/heads/staging' && secrets.STAGING_ROOT || secrets.PRODUCTION_ROOT }}
+            
+            cd domains/$DIRROOT
+            mkdir -p $DIR
+            cd $DIR
 
-            #checkout the branch pulled if not already on the branch
-            git checkout ${{ github.ref }}
+            echo "Checking if Git repository exists in $DIR.."
+            if [ ! -d .git ]; then
+              echo "Cloning repo into $DIR..."
+              git clone https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }} .
+            fi
+
+            # git remote  set-url origin https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }} .
+
+            git checkout $BRANCH
+            echo "Force-resetting to remote branch..."
+            git fetch origin
+            git reset --hard origin/$BRANCH
+            git pull origin $BRANCH
+
+      - name: Install Dependencies
+        run: |
+          composer update --no-dev --optimize-autoloader
+          npm install
+
+      - name: Build Assets
+        run: |
+          #copy vite.config.example.js to vite.config.js 
+          cp vite.config.example.js vite.config.js
+          npm run build
+
+      - name: Deploy Only `public/build` Folder via FTP (Staging)
+        if: github.ref == 'refs/heads/staging'
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: public/build/
+          server-dir: ../${{ secrets.STAGING_PATH }}/public/build/
+     
+      - name: Deploy Only `public/build` Folder via FTP (Production)
+        if: github.ref == 'refs/heads/main'
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: public/build/
+          server-dir: public/build/
+
+      - name: Laravel Setup via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          port: 65002  # Specify your custom SSH port
+          username: ${{ secrets.CPANEL_USER }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          script: |
+            DIR=${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+            DIRROOT=${{ github.ref == 'refs/heads/staging' && secrets.STAGING_ROOT || secrets.PRODUCTION_ROOT }}
+            BRANCH=$(echo ${{ github.ref }} | sed 's#refs/heads/##')
+
+            
+            cd domains/$DIRROOT
+
+            #setup simlink to public and other things
+            if [ ! -f .afmintsetup ]; then
+              touch .afmintsetup
+              rm -rf public_html 
+
+              ln -s $DIR/public public_html
+
+              chmod 755 $DIR
+              chmod 755 $DIR/public
+              chmod 755 $DIR/storage
+              chmod 644 $DIR/public/index.php
+
+            fi
+
+            
+            cd $DIR
+            git checkout $BRANCH
+            git pull origin $BRANCH
 
             # Check if .env file exists, if not, copy .env.deploy to .env
             if [ ! -f .env ]; then
-              cp .env.deploy .env
+              cp .env.example .env
               echo ".env file created from .env.deploy"
-              echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
-              echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
-              echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+              # echo "DB_CONNECTION=mysql" >> .env
+              # echo "DB_HOST=127.0.0.1" >> .env
+              # echo "DB_PORT=3306" >> .env
+              # echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
+              # echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+              # echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
             fi
 
             #install composer and dependencies if not already installed else composer update
             if [ ! -d vendor ]; then
-              composer install
-            fi
-
-            #create a .htaccess file if not already created and add the rewrite rule
-            if [ ! -f .htaccess ]; then
-              echo '<IfModule mod_rewrite.c>' >> .htaccess
-              echo '    RewriteEngine On' >> .htaccess
-              echo '    RewriteRule ^(.*)$ public/$1 [L]' >> .htaccess
-              echo '</IfModule>' >> .htaccess
-
-              php artisan storage:link
-            fi
+              composer update
+            fi    
 
       - name: Pulling New Updates
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.CPANEL_HOST }}
-          port: 21098  # Specify your custom SSH port
+          port: 65002  # Specify your custom SSH port
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASSWORD }}
           script: |
-            cd ${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+            DIR=${{ github.ref == 'refs/heads/staging' && secrets.STAGING_PATH || secrets.PRODUCTION_PATH }}
+            BRANCH=$(echo ${{ github.ref }} | sed 's#refs/heads/##')
+            DIRROOT=${{ github.ref == 'refs/heads/staging' && secrets.STAGING_ROOT || secrets.PRODUCTION_ROOT }}
             
-            #checkout the branch pulled if not already on the branch
-            git checkout ${{ github.ref }}
 
-            #git pull from the branch
-            git pull origin ${{ github.ref }}
+        
+            cd domains/$DIRROOT
+            cd $DIR
+            git checkout $BRANCH
+            git pull origin $BRANCH
             
             #install composer
-            composer install
+            composer update
 
             #Setting up laravel
-            php artisan migrate --force
-            php artisan cache:clear
-            php artisan config:clear
-            php artisan route:clear
-            php artisan view:clear
+            echo "Running migrations..."
+            php artisan migrate --force || echo "Migration failed, continuing..."
+
+            echo "Running seeders (only for initial setup)..."
+            php artisan db:seed --force --class=RolePermissionSeeder || true
+            php artisan db:seed --force --class=SubscriptionPlanSeeder || true
+
+            echo "Clearing caches..."
+            php artisan optimize:clear
             php artisan queue:restart
 
-            exit
-            EOF
+            echo "Deployment completed successfully!"
