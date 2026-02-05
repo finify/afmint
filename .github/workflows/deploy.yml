@@ -3,7 +3,7 @@ name: Deploy Laravel to cPanel (Staging & Production)
 on:
   push:
     branches:
-      - main # For production
+      - master # For production
       - staging # For staging
 
 jobs:
@@ -74,7 +74,7 @@ jobs:
           server-dir: ../${{ secrets.STAGING_PATH }}/public/build/
      
       - name: Deploy Only `public/build` Folder via FTP (Production)
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_HOST }}
