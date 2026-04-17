@@ -287,9 +287,8 @@
                 <ul class="portfolio_filter dark">
                     <li><a href="" class="active" data-filter="*">All</a></li>
                     @foreach($projects as $project)
-                    <li><a href="" data-filter=".{{ $project['name'] }}">{{ $project['name'] }}</a></li>
+                    <li><a href="" data-filter=".{{ Str::slug($project['name']) }}">{{ $project['name'] }}</a></li>
                     @endforeach
-                    {{-- <li><a href="" data-filter=".automation">Automations</a></li> --}}
                 </ul>
             </nav>
             </div>
@@ -297,11 +296,11 @@
         <div class="row grid-services">
 
             @foreach($galleries as $gallery)
-            <div class="col-sm-6 col-md-4 {{ $gallery['project_name'] }}">
+            <div class="col-sm-6 col-md-4 {{ Str::slug($gallery['project_name'] ?? '') }}">
                 <div class="box-image-4">
-                    <a href="{{ Storage::url($gallery['image']) }}" title="{{ $gallery['heading'] }}">
+                    <a href="{{ Storage::url($gallery['image']) }}" title="{{ $gallery['heading'] }}" class="popup-img">
                         <div class="media">
-                            <img src="{{ Storage::url($gallery['image']) }}" alt="" class="img-responsive">
+                            <img src="{{ Storage::url($gallery['image']) }}" alt="{{ $gallery['heading'] }}" class="img-responsive">
                         </div>
                         <div class="body">
                             <div class="content">
@@ -313,6 +312,11 @@
                 </div>
             </div>
             @endforeach
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-sm-12 col-md-12 text-center">
+                <a href="{{ route('home.projects') }}" class="btn btn-primary btn-lg">View More Projects</a>
+            </div>
         </div>
     </div>
 </div>

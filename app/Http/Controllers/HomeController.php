@@ -44,7 +44,12 @@ class HomeController extends Controller
         return view('home.services');
     }
     public function projects(){
-        return view('home.projects');
+        $projects = Project::orderBy('id','desc')->get()->toArray();
+        $galleries = Gallery::select('galleries.*','projects.name as project_name')
+            ->leftJoin('projects','projects.id','=','galleries.project_id')
+            ->orderBy('id','desc')
+            ->get();
+        return view('home.projects', compact('projects', 'galleries'));
     }
 
     public function solar(){
