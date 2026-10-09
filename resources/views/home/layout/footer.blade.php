@@ -22,7 +22,7 @@
                     <div class="icon"><i class="fa fa-map-marker"></i></div>
                     <div class="body-content">
                         <div class="heading">Our HQ</div>
-                        1 Child Close, Liverpool, Apapa , Lagos Nigeria
+                        No4 Liverpool Road, Apapa Quays, Lagos
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                     <ul class="recent-post">
                         <li>
                             <span class="date"><i class="fa fa-clock-o"></i> NIGERIA:</span>
-                            <a href="#" title="">1 Child Close, Liverpool, Apapa , Lagos Nigeria</a>
+                            <a href="#" title="">No4 Liverpool Road, Apapa Quays, Lagos</a>
                         </li>
                         <li>
                             <span class="date"><i class="fa fa-clock-o"></i> INDIA:</span>
